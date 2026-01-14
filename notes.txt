@@ -1,0 +1,35 @@
+knight_moves(start_coord, end_coord)
+queue = []hash_visited = {}
+1. Aggiungi start_coord alla queue
+2. Aggiungi a visited hash. hash_visited[start_coord] = nil (questo éil node iniziale)
+3. while queue is not empty	
+4. prendo il primo nodo nella queue e assegnalo. current =queue.shift	
+5. trova le mosse valide a partire da current (no valori negativi o> 7).	
+6. valid_moves.each |valid_move|		
+7. controlla se é nell’hash		
+8. Se é nell’hash, skip		
+9. se non é nell’hash, registrala hash_visited[valid_move] =current		
+10. controlla se valid_move == end_coord			
+11. Se é == break the loop			
+12. Ricostruisci il percorso passando da value a key fino a nil			
+13. se non é == aggiungi valid_move alla queue			
+14. repeat the loop		
+
+nested = [[1, 2], [3, 4], [5, 6]]
+doubled_nested = nested.map { |subarray| subarray.map { |n| n * 2 } }puts doubled_nested 
+# Output: [[2, 4], [6, 8], [10, 12]]
+
+MOVES = [[1, 2], [2,-1], [-2,+1],[-2,-1], [+1, +2], [-1,+2],[+1,-2],[-1, -2]]
+current [x, y]
+valid_moves = []
+MOVES.each do |move|	
+    if is valid?
+        (move[0] + current[0], move[1] + current[1])		
+        valid_moves << [move[0] + current[0], move[1] + current[1]]	
+    end
+end
+
+def is_valid?(x, y)	
+    range = (0..7)	
+    range.include?(x) && range.include?(y)
+end
